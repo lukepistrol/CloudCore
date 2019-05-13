@@ -72,7 +72,7 @@ class PushOperationQueue: OperationQueue {
 	private func removeCachedAssets(for record: CKRecord) {
 		for key in record.allKeys() {
 			guard let asset = record.value(forKey: key) as? CKAsset else { continue }
-			try? FileManager.default.removeItem(at: asset.fileURL)
+            try? FileManager.default.removeItem(at: asset.fileURL!)
 		}
 	}
 
